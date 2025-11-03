@@ -31,7 +31,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="#pricing"
-                className="bg-[#ff9d5c] text-white px-8 py-4 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-xl hover:shadow-[#ff9d5c]/30 text-center"
+                className="bg-[#ff9d5c] text-white px-8 py-4 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-xl hover:shadow-[#ff9d5c]/30 text-center transform hover:scale-105 animate-pulse-slow"
               >
                 Download Now
               </Link>
@@ -47,35 +47,117 @@ export default function HeroSection() {
             }`}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-3xl blur-3xl opacity-20"></div>
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-500">FOCUS SESSION</span>
-                    <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Active</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
 
-                  <div className="text-center">
-                    <div className="text-7xl font-bold text-[#3d3d3d] mb-2">25:00</div>
-                    <p className="text-gray-600 font-medium">Working on: Design Homepage</p>
-                  </div>
+              {/* Desktop Environment Preview */}
+              <div className="relative bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl shadow-2xl border border-gray-200 overflow-hidden hover:shadow-3xl transition-shadow duration-300">
+                {/* Simulated Desktop */}
+                <div className="relative aspect-[16/10] bg-gradient-to-br from-blue-100 via-purple-50 to-pink-50 p-4">
 
-                  <div className="space-y-3 pt-4 border-t border-gray-100">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 rounded-full border-2 border-[#ff9d5c]"></div>
-                      <span className="text-gray-700">Review client feedback</span>
+                  {/* Desktop Icons */}
+                  <div className="absolute top-4 left-4 space-y-3">
+                    <div className="flex flex-col items-center space-y-1 opacity-70">
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg shadow-md"></div>
+                      <span className="text-xs text-gray-700 font-medium">Chrome</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 rounded-full bg-[#ff9d5c] flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
+                    <div className="flex flex-col items-center space-y-1 opacity-70">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-md"></div>
+                      <span className="text-xs text-gray-700 font-medium">VS Code</span>
+                    </div>
+                    <div className="flex flex-col items-center space-y-1 opacity-70">
+                      <div className="w-10 h-10 bg-green-500 rounded-lg shadow-md"></div>
+                      <span className="text-xs text-gray-700 font-medium">Slack</span>
+                    </div>
+                  </div>
+
+                  {/* Code Editor Window */}
+                  <div className="absolute top-8 left-24 right-4 h-40 bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
+                    {/* Editor Title Bar */}
+                    <div className="bg-gray-800 px-3 py-1.5 flex items-center justify-between border-b border-gray-700">
+                      <div className="flex space-x-1.5">
+                        <div className="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                        <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></div>
+                        <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
                       </div>
-                      <span className="text-gray-400 line-through">Morning standup meeting</span>
+                      <span className="text-xs text-gray-400">app.tsx</span>
+                      <div className="w-8"></div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 rounded-full border-2 border-gray-300"></div>
-                      <span className="text-gray-700">Update project documentation</span>
+
+                    {/* Code Content */}
+                    <div className="p-3 font-mono text-xs space-y-0.5">
+                      <div className="text-purple-400">import <span className="text-blue-400">React</span> from <span className="text-green-400">'react'</span>;</div>
+                      <div className="text-purple-400">import <span className="text-blue-400">{'{ useState }'}</span>;</div>
+                      <div className="h-1"></div>
+                      <div className="text-blue-400">function <span className="text-yellow-400">App</span>() {'{'}</div>
+                      <div className="pl-3 text-purple-400">const <span className="text-white">[count]</span> = <span className="text-blue-400">useState</span>();</div>
+                      <div className="pl-3 text-purple-400">return <span className="text-gray-500">&lt;div&gt;...&lt;/div&gt;</span></div>
+                      <div className="text-blue-400">{'}'}</div>
+                    </div>
+                  </div>
+
+                  {/* MindAnchor Overlay - Hero Version */}
+                  <div className="absolute bottom-4 right-4 w-64 bg-white rounded-2xl shadow-2xl border-2 border-[#ff9d5c] overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] p-3 text-white">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-bold text-xs">Pomodoro Timer</h3>
+                        <div className="flex items-center space-x-1">
+                          <button className="text-white/80 hover:text-white transition-colors" title="Minimize">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                            </svg>
+                          </button>
+                          <button className="text-white/80 hover:text-white transition-colors" title="Close">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="text-2xl font-bold mb-1">25:00</div>
+                      <div className="flex items-center text-white/90 text-xs">
+                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse mr-1.5"></div>
+                        <span>Focus Session</span>
+                      </div>
+                    </div>
+
+                    {/* Task List */}
+                    <div className="p-3 bg-white">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase mb-2">Today's Tasks</h4>
+                      <div className="space-y-1.5">
+                        <div className="flex items-center space-x-2 p-1.5 bg-green-50 rounded border border-green-200">
+                          <div className="w-3 h-3 rounded-full bg-[#ff9d5c] flex items-center justify-center flex-shrink-0">
+                            <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                          </div>
+                          <span className="text-xs text-gray-500 line-through flex-1">Design homepage</span>
+                        </div>
+
+                        <div className="flex items-center space-x-2 p-1.5 bg-orange-50 rounded border border-orange-300">
+                          <div className="w-3 h-3 rounded-full border-2 border-[#ff9d5c] flex-shrink-0"></div>
+                          <span className="text-xs text-gray-700 font-medium flex-1">Review code</span>
+                        </div>
+
+                        <div className="flex items-center space-x-2 p-1.5">
+                          <div className="w-3 h-3 rounded-full border-2 border-gray-300 flex-shrink-0"></div>
+                          <span className="text-xs text-gray-600 flex-1">Update docs</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* "Always on Top" Badge */}
+                  <div className="absolute top-4 right-4 bg-[#ff9d5c] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-bounce">
+                    ✨ Always Visible
+                  </div>
+
+                  {/* Desktop Taskbar */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gray-800/90 backdrop-blur-sm px-4 py-1.5 flex items-center space-x-3">
+                    <div className="flex space-x-2">
+                      <div className="w-6 h-6 bg-blue-500 rounded-md shadow-md"></div>
+                      <div className="w-6 h-6 bg-gray-700 rounded-md shadow-md"></div>
+                      <div className="w-6 h-6 bg-green-500 rounded-md shadow-md"></div>
+                      <div className="w-6 h-6 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-md shadow-md ring-2 ring-white"></div>
                     </div>
                   </div>
                 </div>
@@ -180,7 +262,7 @@ export default function HeroSection() {
             <p className="text-gray-600 mb-6">Ready to boost your productivity?</p>
             <Link
               href="#pricing"
-              className="inline-block bg-[#ff9d5c] text-white px-8 py-4 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-xl hover:shadow-[#ff9d5c]/30"
+              className="inline-block bg-[#ff9d5c] text-white px-8 py-4 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-xl hover:shadow-[#ff9d5c]/30 transform hover:scale-105"
             >
               Download Now
             </Link>

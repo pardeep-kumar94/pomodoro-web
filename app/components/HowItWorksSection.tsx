@@ -4,7 +4,7 @@ export default function HowItWorksSection() {
       icon: "⏱️",
       title: "Customizable Pomodoro Timer",
       description:
-        "Choose your ideal focus duration: 15, 25, 30, or 45 minutes. The timer adapts to your workflow and runs right in your browser.",
+        "Choose your ideal focus duration: 15, 25, 30, or 45 minutes. The timer adapts to your workflow and stays always visible on your desktop.",
     },
     {
       icon: "✓",
@@ -14,15 +14,15 @@ export default function HowItWorksSection() {
     },
     {
       icon: "👁️",
-      title: "Mini-Window Display",
+      title: "Always-on-Top Overlay",
       description:
-        "Keep your timer and current task visible with a collapsible mini-window that stays accessible across all views.",
+        "Keep your timer and tasks visible with a floating window that stays on top of all applications. Never lose sight of your focus session.",
     },
     {
       icon: "🔔",
-      title: "Browser Notifications",
+      title: "Audio & Visual Alerts",
       description:
-        "Get desktop notifications when your Pomodoro session ends. Stay in the flow without constantly checking the timer.",
+        "Get instant audio beeps and visual notifications when your Pomodoro session ends. Stay in the flow without constantly checking the timer.",
     },
     {
       icon: "📊",
@@ -31,10 +31,10 @@ export default function HowItWorksSection() {
         "Review your past task lists and completed sessions organized by date. Gain insights into your productivity patterns.",
     },
     {
-      icon: "🎯",
-      title: "Tab Title Updates",
+      icon: "💻",
+      title: "System Tray Integration",
       description:
-        "See remaining time in your browser tab title. Monitor your progress at a glance without switching tabs.",
+        "Quick access from your system tray. Start, pause, or skip sessions without opening the main window. MindAnchor stays out of your way.",
     },
   ];
 
@@ -169,8 +169,8 @@ export default function HowItWorksSection() {
               </div>
 
               {/* Highlight Badge */}
-              <div className="absolute top-6 right-6 bg-[#ff9d5c] text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg flex items-center space-x-2">
-                <span>✨</span>
+              <div className="absolute top-6 right-6 bg-[#ff9d5c] text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg flex items-center space-x-2 animate-bounce">
+                <span className="animate-pulse">✨</span>
                 <span>Always on Top</span>
               </div>
 
@@ -202,9 +202,10 @@ export default function HowItWorksSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-100 group"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
               <h3 className="text-xl font-bold text-[#3d3d3d] mb-3">{feature.title}</h3>
               <p className="text-gray-600 leading-relaxed">{feature.description}</p>
             </div>

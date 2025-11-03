@@ -66,7 +66,8 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 group"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -86,7 +87,7 @@ export default function TestimonialsSection() {
               </p>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-full flex items-center justify-center text-white font-bold mr-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-full flex items-center justify-center text-white font-bold mr-4 group-hover:scale-110 transition-transform duration-300">
                   {testimonial.avatar}
                 </div>
                 <div>

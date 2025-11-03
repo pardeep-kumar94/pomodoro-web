@@ -44,11 +44,11 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-8 h-8 bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-lg">M</span>
             </div>
-            <span className="text-xl font-bold text-[#3d3d3d]">MindAnchor</span>
+            <span className="text-xl font-bold text-[#3d3d3d] group-hover:text-[#ff9d5c] transition-colors">MindAnchor</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -73,7 +73,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link
               href="#pricing"
-              className="bg-[#ff9d5c] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-lg hover:shadow-[#ff9d5c]/30"
+              className="bg-[#ff9d5c] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-lg hover:shadow-[#ff9d5c]/30 hover:scale-105 transform"
             >
               Download Now
             </Link>

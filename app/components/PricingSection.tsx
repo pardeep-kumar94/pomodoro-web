@@ -57,9 +57,10 @@ export default function PricingSection() {
               key={index}
               className={`rounded-3xl p-8 ${
                 plan.highlighted
-                  ? "bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] text-white shadow-2xl scale-105"
+                  ? "bg-gradient-to-br from-[#ff9d5c] to-[#ff8040] text-white shadow-2xl scale-105 animate-pulse-slow"
                   : "bg-gray-50 border border-gray-200"
-              } transition-all duration-300 hover:shadow-xl`}
+              } transition-all duration-300 hover:shadow-2xl hover:scale-110 group`}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               {plan.highlighted && (
                 <div className="inline-block bg-white text-[#ff9d5c] text-sm font-bold px-4 py-1 rounded-full mb-4">
@@ -96,10 +97,10 @@ export default function PricingSection() {
 
               <a
                 href={plan.downloadLink}
-                className={`block w-full py-3 px-6 rounded-full font-medium text-center mb-8 transition-all ${
+                className={`block w-full py-3 px-6 rounded-full font-medium text-center mb-8 transition-all transform hover:scale-105 ${
                   plan.highlighted
-                    ? "bg-white text-[#ff9d5c] hover:shadow-lg"
-                    : "bg-[#ff9d5c] text-white hover:bg-[#ff8040]"
+                    ? "bg-white text-[#ff9d5c] hover:shadow-xl"
+                    : "bg-[#ff9d5c] text-white hover:bg-[#ff8040] hover:shadow-lg"
                 }`}
               >
                 {plan.cta}
