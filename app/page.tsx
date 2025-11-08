@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import HowItWorksSection from "./components/HowItWorksSection";
-import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
 import Footer from "./components/Footer";
 
@@ -12,7 +11,6 @@ export default function Home() {
       <main>
         <HeroSection />
         <HowItWorksSection />
-        <TestimonialsSection />
         <PricingSection />
       </main>
       <Footer />

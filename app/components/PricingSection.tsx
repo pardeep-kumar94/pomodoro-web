@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function PricingSection() {
@@ -96,12 +98,16 @@ export default function PricingSection() {
               </p>
 
               <a
-                href={plan.downloadLink}
+                href="#launch-countdown"
                 className={`block w-full py-3 px-6 rounded-full font-medium text-center mb-8 transition-all transform hover:scale-105 ${
                   plan.highlighted
                     ? "bg-white text-[#ff9d5c] hover:shadow-xl"
                     : "bg-[#ff9d5c] text-white hover:bg-[#ff8040] hover:shadow-lg"
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('launch-countdown')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {plan.cta}
               </a>

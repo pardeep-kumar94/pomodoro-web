@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import CountdownTimer from "./CountdownTimer";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,12 +30,16 @@ export default function HeroSection() {
               and intelligent task management. Start your journey to peak productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="#pricing"
+              <a
+                href="#launch-countdown"
                 className="bg-[#ff9d5c] text-white px-8 py-4 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-xl hover:shadow-[#ff9d5c]/30 text-center transform hover:scale-105 animate-pulse-slow"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('launch-countdown')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Download Now
-              </Link>
+              </a>
             </div>
             <p className="text-sm text-gray-500 mt-4">
               Available for macOS and Windows • Free to download
@@ -166,107 +171,9 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* App Screenshots Section */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#3d3d3d] mb-4">See MindAnchor in Action</h2>
-            <p className="text-gray-600">Beautiful, intuitive interface designed for maximum productivity</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Screenshot 1 - Dashboard */}
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="aspect-[4/3] p-6 flex items-center justify-center">
-                <div className="w-full h-full bg-white rounded-xl shadow-lg border border-gray-100 p-4">
-                  <div className="space-y-3">
-                    <div className="h-3 bg-gray-200 rounded w-1/3"></div>
-                    <div className="h-32 bg-gradient-to-br from-[#ff9d5c]/20 to-[#ff8040]/20 rounded-lg flex items-center justify-center">
-                      <div className="text-4xl font-bold text-[#ff9d5c]">25:00</div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-2 bg-gray-100 rounded"></div>
-                      <div className="h-2 bg-gray-100 rounded w-5/6"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 bg-white border-t border-gray-200">
-                <h3 className="font-semibold text-[#3d3d3d] mb-1">Dashboard View</h3>
-                <p className="text-sm text-gray-600">Track your focus sessions and tasks</p>
-              </div>
-            </div>
-
-            {/* Screenshot 2 - Timer */}
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="aspect-[4/3] p-6 flex items-center justify-center">
-                <div className="w-full h-full bg-white rounded-xl shadow-lg border border-gray-100 p-4">
-                  <div className="space-y-3">
-                    <div className="h-3 bg-gray-200 rounded w-1/2"></div>
-                    <div className="relative w-32 h-32 mx-auto">
-                      <svg className="w-full h-full transform -rotate-90">
-                        <circle cx="64" cy="64" r="56" stroke="#f3f4f6" strokeWidth="8" fill="none" />
-                        <circle cx="64" cy="64" r="56" stroke="#ff9d5c" strokeWidth="8" fill="none" strokeDasharray="351.86" strokeDashoffset="87.96" strokeLinecap="round" />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-[#3d3d3d]">18:45</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center gap-2">
-                      <div className="w-16 h-8 bg-[#ff9d5c] rounded-lg"></div>
-                      <div className="w-16 h-8 bg-gray-200 rounded-lg"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 bg-white border-t border-gray-200">
-                <h3 className="font-semibold text-[#3d3d3d] mb-1">Focus Timer</h3>
-                <p className="text-sm text-gray-600">Customizable Pomodoro intervals</p>
-              </div>
-            </div>
-
-            {/* Screenshot 3 - Task List */}
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="aspect-[4/3] p-6 flex items-center justify-center">
-                <div className="w-full h-full bg-white rounded-xl shadow-lg border border-gray-100 p-4">
-                  <div className="space-y-3">
-                    <div className="h-3 bg-gray-200 rounded w-2/3"></div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded">
-                        <div className="w-4 h-4 rounded-full bg-[#ff9d5c]"></div>
-                        <div className="h-2 bg-gray-300 rounded flex-1"></div>
-                      </div>
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded">
-                        <div className="w-4 h-4 rounded-full border-2 border-gray-300"></div>
-                        <div className="h-2 bg-gray-200 rounded flex-1"></div>
-                      </div>
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded">
-                        <div className="w-4 h-4 rounded-full border-2 border-gray-300"></div>
-                        <div className="h-2 bg-gray-200 rounded flex-1 w-4/5"></div>
-                      </div>
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded">
-                        <div className="w-4 h-4 rounded-full bg-[#ff9d5c]"></div>
-                        <div className="h-2 bg-gray-300 rounded flex-1 w-3/4"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 bg-white border-t border-gray-200">
-                <h3 className="font-semibold text-[#3d3d3d] mb-1">Task Management</h3>
-                <p className="text-sm text-gray-600">Organize and track your daily tasks</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">Ready to boost your productivity?</p>
-            <Link
-              href="#pricing"
-              className="inline-block bg-[#ff9d5c] text-white px-8 py-4 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-xl hover:shadow-[#ff9d5c]/30 transform hover:scale-105"
-            >
-              Download Now
-            </Link>
-          </div>
+        {/* Launch Countdown Section */}
+        <div id="launch-countdown" className="mt-20 scroll-mt-20">
+          <CountdownTimer />
         </div>
       </div>
     </section>

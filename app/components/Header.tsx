@@ -8,7 +8,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["how-it-works", "testimonials", "pricing"];
+      const sections = ["how-it-works", "pricing"];
       const scrollPosition = window.scrollY + 100; // Offset for header height
 
       for (const section of sections) {
@@ -36,7 +36,6 @@ export default function Header() {
 
   const navLinks = [
     { href: "#how-it-works", label: "How It Works", id: "how-it-works" },
-    { href: "#testimonials", label: "Testimonials", id: "testimonials" },
     { href: "#pricing", label: "Pricing", id: "pricing" },
   ];
 
@@ -71,12 +70,16 @@ export default function Header() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link
-              href="#pricing"
+            <a
+              href="#launch-countdown"
               className="bg-[#ff9d5c] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#ff8040] transition-all hover:shadow-lg hover:shadow-[#ff9d5c]/30 hover:scale-105 transform"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('launch-countdown')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Download Now
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
